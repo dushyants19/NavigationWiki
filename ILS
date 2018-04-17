@@ -1,0 +1,77 @@
+## Setup
+Before beginning to edit ILS approaches, clone the airports and navigation folder (folder's fork if you are new) anywhere on your computer. In the airports' folder, select the development branch in order to have the latest version of all airports.
+![GitHub Desktop](https://community.infinite-flight.com/uploads/default/original/3X/e/9/e913e0114bcb04187fe76d48693a76311bdd98f4.png)
+
+## Editing
+Before opening anything, make sure to click sync in the GitHub desktop app to avoid interfering with others.
+
+Open WED and create a _Navigation Editing_ folder.
+![WED](https://community.infinite-flight.com/uploads/default/original/3X/8/8/88845d047ae4784e1e48fac0f751c5fe6a0b50e9.png)
+
+Open it up and import the desired airport. Go to _view_ and change from _meters_ to _feet_.
+ 
+![WED](https://cdn-enterprise.discourse.org/infinite_flight/uploads/default/original/3X/e/9/e9340bee3b71c973603f0f850dfe11e295056a78.png)
+
+Open the _LOC.json_ and _Glideslope.json_ files in your text/code editor.
+If your program supports working in split-view, do so.
+
+![Brackets](https://cdn-enterprise.discourse.org/infinite_flight/uploads/default/original/3X/2/4/241408790d883ac477548b10b1de9d9983c51c6e.png)
+
+Search for the airport’s ICAO (use command/ctrl + F). In this tutorial, I’ll be editing MMGL. 
+Please note there are no longer any duplicates thanks to Val's code. 
+
+Go in your standard web browser and search for ILS charts for your assigned airport. If you don’t find any, feel free to ask in Slack.
+
+Each runway which is ILS equipped should have a chart. On the chart, look for three things:
+* Identifier
+* Frequency
+* Glideslope angle
+
+![Charts](https://cdn-enterprise.discourse.org/infinite_flight/uploads/default/original/3X/7/3/739d3b0f9d8c3ab5d061394422c19b3f2a5c81ca.png)
+![Charts](https://cdn-enterprise.discourse.org/infinite_flight/uploads/default/original/3X/4/d/4dfcd513926b060141364ac5c488865742db8d67.png)
+
+Compare this data with the files. It is already correct most of the time, but if it’s not the case, correct it. While this data isn’t used in Infinite Flight yet, it may come in the future. The fields you would need to edit are “identifier”, “frequency” and “glideslope” Make sure the data is the same on both files.
+
+![Brackets](https://cdn-enterprise.discourse.org/infinite_flight/uploads/default/original/3X/0/d/0d84a13a9a8831a2e910172df3639465c0ca9b84.png)
+
+Repeat this process for all ILS equipped runways.
+
+Now, come back in WED and copy the elevation of the airport. Make sure it is indicated in feet.
+ 
+![WED](https://cdn-enterprise.discourse.org/infinite_flight/uploads/default/original/3X/f/7/f73139bcd059bc4965d2588a7ca130b71d76660e.png)
+
+Paste that data in all “elevation” fields of the airport in the navigation files.
+
+![Brackets](https://cdn-enterprise.discourse.org/infinite_flight/uploads/default/original/3X/9/9/99db27ead5cf05786253c365c55f7e341881239f.png)
+
+Afterwards, go back in WED and select the runway. Copy the heading. In this example, runway 10 has a heading of 114.14. To get the heading of the opposite side of the runway, simply add 180. In our example, we then get a heading of 294.14 for runway 28.
+
+![WED](https://cdn-enterprise.discourse.org/infinite_flight/uploads/default/original/3X/0/a/0a9d9133c7e5fddcc5c041a2186e9efe845fc727.png)
+
+Switch back to your text/code editor. Paste the headings in their respective “bearing” fields as seen below.
+
+![Brackets](https://cdn-enterprise.discourse.org/infinite_flight/uploads/default/original/3X/d/1/d180b7785e89c209177d26ffbfe84aefc72b0e40.png)
+
+Before we continue, let’s have a look at the “glideslope” field.
+It is composed of two different things:
+* The glideslope angle (mostly 3.00)
+* The bearing without a dot
+
+Replace the last six digits with the bearing without a dot.
+
+![Brackets](https://cdn-enterprise.discourse.org/infinite_flight/uploads/default/original/3X/b/b/bb951b808b13311092428e018f187b23ee2aab9c.png)
+
+Now, open up your file explorer and search for the airport’s apt.dat file. 
+
+![Finder](https://cdn-enterprise.discourse.org/infinite_flight/uploads/default/original/3X/d/4/d4ebbf1a908cbd86294ee83121585c262a4d42b2.png)
+
+Open the file in your text/file editor. At first, it might be a bit scary to see all that data. Luckily, we don’t need to inspect the whole file. 
+
+![Brackets](https://cdn-enterprise.discourse.org/infinite_flight/uploads/default/original/3X/3/b/3bd6f193bcaf08be0ec81b6367ff566cf70e4f39.png)
+
+As seen above, we only need the coordinates of each runway. Replace the data of the navigation files with these from the apt.dat. Don’t forget to do that for all runways in both files (glideslope.json and LOC.json).
+Here’s how it should like now:
+
+![Brackets](https://cdn-enterprise.discourse.org/infinite_flight/uploads/default/original/3X/e/e/ee88330b92d95dd3e08e64046c608049e4e1b540.png)
+
+Now, go ahead and save the files.
