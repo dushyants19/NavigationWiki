@@ -1,0 +1,23 @@
+## Editing
+
+Before you add missing fixes to the database, make sure to [create an issue](https://github.com/InfiniteFlightAirportEditing/Navigation/issues/new).
+Remember that our database uses the decimal coordinates system. If your source isn't using this system, use an online converter like [this one](http://www.latlong.net/degrees-minutes-seconds-to-decimal-degrees).
+
+Afterwards, open the _fixes.json_ file in your text/code editor. As you may have recognised, the fixes are in alphabetical order.
+Search for the fix (using command/ctrl + F) and make sure it isn't already there. 
+If not, you can add it. Copy the code snippet below and paste it in the right spot (alphabetical order) of the file.
+
+```json
+  {
+    "Latitude": 0.0,
+    "Name": "00000",
+    "Longitude": -10.0
+  },
+```
+
+![Brackets](https://media.giphy.com/media/IrZptvqDlF3s4/giphy.gif)
+
+Replace the three fields with accurate data.
+Repeat these steps to add other fixes.
+
+Once you're finished, go ahead and save the files.
